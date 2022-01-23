@@ -17,6 +17,11 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  @Get('/name/:name')
+  findAllbyName(@Param('name') name: string) {
+    return this.usersService.findAll(name);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
